@@ -1,0 +1,15 @@
+// Import de distintos Scss
+
+@import "Background";
+@import "FuentesLetras";
+
+// Definición del tamaño del html del proyecto
+html{ 
+    font-size: 62.5%;
+}
+
+// Definición para los margenes y padding del proyecto
+*{ 
+    margin: 0; 
+    padding: 0;
+}
