@@ -5,7 +5,7 @@
 var CantidadPedido = prompt('Cuantas bebidas deseas?');
 console.log('La cantidad de bebida que pediste es: ' + CantidadPedido);
 
-if((CantidadPedido >= 1000)){
+if((CantidadPedido > 1000)){
     alert('No crees que ' + CantidadPedido + ' es demasiado, take it easy');
 }else{
     console.log('Gracias por la compra de ' + CantidadPedido + ' cafes');
