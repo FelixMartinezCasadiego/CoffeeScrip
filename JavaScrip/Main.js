@@ -21,7 +21,7 @@ while ( IngreseMonto != 'ESC') {
 
 // - Pedir un número por prompt, repetir la salida del mensaje “Hola” la cantidad de veces ingresada
 
-Var NumeroPedido = prompt('Ingrese el número favorito:');
+var NumeroPedido = prompt('Ingrese el número favorito:');
 
 
 
