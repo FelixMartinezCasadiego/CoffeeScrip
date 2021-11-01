@@ -43,14 +43,17 @@ Pedido();
 
 // Suma de pedidos
 
-var resultado = 0;
-
 function sumar(param1, param2, param3){
-    resultado = param1*2 + param2 + param3;
+    let resultado = param1*2 + param2 + param3;
+    return resultado;
 };
 
-sumar(2, 1, 1);
+let PedidoCafe1 = parseInt(prompt('Cuantos café capuchino pediste?'));
+let PedidoCafe2 = parseInt(prompt('Cuantos café latte pediste?'));
+let PedidoCafe3 = parseInt(prompt('Cuantos café con leche pediste?'));
 
-console.log('Lo que se debe cobrar es: ' + resultado + ' $');
+let resultadoPedidoCafe = sumar(PedidoCafe1, PedidoCafe3, PedidoCafe3);
+
+console.log('Lo que se debe cobrar es: ' + resultadoPedidoCafe + ' $');
 
 
