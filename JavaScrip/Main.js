@@ -1,11 +1,11 @@
 // Prompt de Saludo
 
-/*var IngresoCliente = prompt('Ingrese su Nombre:');
+var IngresoCliente = prompt('Ingrese su Nombre:');
 console.log('Mi nombre es: ' + IngresoCliente);
-alert('Welcome to CoffeeScrip' + " " + IngresoCliente + " !");*/
+alert('Welcome to CoffeeScrip' + " " + IngresoCliente + " !");
 
 // Creación de objeto
-
+/*
 function Cliente1(var1, var2, var3){ 
     
 
@@ -17,23 +17,45 @@ function Cliente1(var1, var2, var3){
 
 const Persona1 = new Cliente1(prompt('Cual es tu nombre? '), prompt('cuantos cafes quieres? '), alert('Estará en 2min ! Gracias por tu compra !'));
 
-console.log(Persona1);
+console.log(Persona1);*/
 
-// Metodo
+// Array con entradas
+/*
+var concurso1 = prompt('Quieres participar tu y 2 amigos en un concurso? (cupos limitados)') 
+const concursoNombres = [];
+var cantidadConcurso = 3;
 
-class Vaso {
-    constructor (nombre, precio){
-        this.nombre = nombre.toUpperCase();
-        this.precio = precio;
+function concursantes1(){
+
+
+    while (concursoNombres.length < cantidadConcurso){
+        let entradaConcurso = prompt('Nombre del concursante:');
+        concursoNombres.push(entradaConcurso.toLowerCase());
     }
 
-    iva() {
-        this.precio = this.precio * 1.21;
-    }
+    console.log('Total concursantes: ' + concursoNombres)
 };
 
-const venta1 = new Vaso(prompt('Que nombre quieres en el vaso?'), 2 );
-console.log(venta1);
+if ( (concurso1 == 'Si') || (concurso1 == 'si') || (concurso1 == 'SI')){
+    concursantes1();       
+}else{
+    console.log('Cliente no quiere participar')
+};*/
 
-venta1.iva();
-console.log();
+// Array con objetos
+
+const informacionCli = [
+    {id:1, nombre:IngresoCliente},
+    {id:2, nombre: 'cafe'}
+];
+
+for (var informacionCli1 of informacionCli) {
+    console.log('ID: ' + informacionCli1.id + ' - Información pedido: ' + informacionCli1.nombre);
+}
+
+
+
+
+
+
+
