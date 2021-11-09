@@ -42,16 +42,37 @@ if ( (concurso1 == 'Si') || (concurso1 == 'si') || (concurso1 == 'SI')){
     console.log('Cliente no quiere participar')
 };*/
 
+// Orden de objetos
+
+const tiposCafes = [
+    {nombre: 'Capuchino', costo: 3},
+    {nombre: 'Latte Coffee', costo: 1},
+    {nombre: 'Milk Coffee', costo: 2}
+];
+
+const cafeOrdenados = tiposCafes.sort((ca1, ca2) => {
+    return ca1.costo - ca2.costo
+});
+
+console.log(cafeOrdenados);
+
 // Array con objetos
 
 const informacionCli = [
     {id:1, nombre:IngresoCliente},
-    {id:2, nombre: 'cafe'}
+    {id:2, nombre: 'cafe'},
 ];
 
 for (var informacionCli1 of informacionCli) {
     console.log('ID: ' + informacionCli1.id + ' - Información pedido: ' + informacionCli1.nombre);
 }
+
+
+
+
+
+
+
 
 
 
