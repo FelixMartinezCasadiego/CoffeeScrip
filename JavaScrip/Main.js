@@ -20,7 +20,7 @@ class producto{
 
     // metodo del objeto para restar stock
 
-    restarstock(){
+    restarStock(){
         this.stock = this.stock - 1;
 
         console.log(`El stock de ${this.nombre} ha sido actualizado`);
@@ -29,10 +29,10 @@ class producto{
 
 // Objetos instanciar manualmente
 
-const producto0 = new producto (0, 'cafe', 350, 100);
-const producto1 = new producto (1, 'capuchino', 88, 20);
-const producto2 = new producto (2, 'cafe con leche', 85, 50);
-const producto3 = new producto (3, 'cafe latte', 200, 90);
+const producto0 = new producto (0, 'capuchino', 3, 100);
+const producto1 = new producto (1, 'café latte', 2, 100);
+const producto2 = new producto (2, 'cafe con leche', 2, 100);
+const producto3 = new producto (3, 'Torta de zanahoria', 3, 100);
 
 let arrayProductos = [producto0, producto1, producto2, producto3];
 
@@ -42,7 +42,7 @@ console.table(arrayProductos);
 
 let carrito = [];
 
-let productosOfrecidos = 'Tenemos para ofrecerle: ';
+let productosOfrecidos = 'Buenas! Tenemos para ofrecerle: ';
 
 // Muestra via prompt con productos
 
@@ -64,43 +64,64 @@ while(isNaN(respuestaUsuario)){
 }
 
 while(respuestaUsuario != 99){
+
     switch(respuestaUsuario){
 
         case 0:
             carrito.push(arrayProductos[0])
             alert(`Agregamos al carrito ${arrayProductos[0].nombre}`)
-            arrayProductos[0].restarstock()
+            arrayProductos[0].restarStock()
             break;
 
         case 1:
             carrito.push(arrayProductos[1])
             alert(`Agregamos al carrito ${arrayProductos[1].nombre}`)
-            arrayProductos[1].restarstock()
+            arrayProductos[1].restarStock()
             break;
 
         case 2:
             carrito.push(arrayProductos[2])
             alert(`Agregamos al carrito ${arrayProductos[2].nombre}`)
-            arrayProductos[2].restarstock()
+            arrayProductos[2].restarStock()
             break;
 
         case 3:
         carrito.push(arrayProductos[3])
         alert(`Agregamos al carrito ${arrayProductos[3].nombre}`)
-        arrayProductos[3].restarstock()
+        arrayProductos[3].restarStock()
         break;
 
         default: 
-        console.log('No tenemos el id elegido')
+        console.log('No tenemos el id elegido') 
         break;
     }
-}
 
-respuestaUsuario = parseInt(prompt(productosOfrecidos))
+    respuestaUsuario = parseInt(prompt(productosOfrecidos))
+    };
+
+    // Finalización de compra
+
+    console.log('Su pedido fue concluido');
+    mostrarCarrito()
 
 };
 
+let productosCarrito = 'Su compra es: ';
+let precioCarrito = 0;
+
+function mostrarCarrito(){
+    for (itemsSeleccionados of carrito){
+        productosCarrito += ` \n - ${itemsSeleccionados.nombre} `
+        precioCarrito += itemsSeleccionados.precio
+    }
+
+    alert(` \n ${productosCarrito} \n por un total de $ ${precioCarrito} ` )
+};
+
+
 agregarCarrito();
+
+
 
 
 
