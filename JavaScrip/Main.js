@@ -1,37 +1,34 @@
-// Creación de objeto
+// Creación de eventos
 
-function Cliente1(var1, var2){ 
-    
+let boton = document.getElementById('botonPrincipal');
 
-    this.cliente = var1;
-    this.bienvenida = var2;
+boton.addEventListener('click', respuestaClick);
 
-}; 
+function respuestaClick(){
+    var nombre = document.getElementById('nombre').value;
+    var email = document.getElementById('emailForm').value;
+    var sugerForm = document.getElementById('sugerForm').value;
 
-const Persona1 = new Cliente1(prompt('Ingrese su Nombre: '), alert('Welcome to CoffeeScrip!') );
+    if(nombre == ""){
+        alert('Ingrese un nombre en el campo Nombre');
+        return false;
+    };
 
-console.log(Persona1);
+    if(email == ""){
+        alert('Por favor ingrese email en el campo Email');
+        return false;
+    };
 
-var cantidadCafe = prompt('cuantos cafes quieres? ')
-alert('Estará en 2min ! Gracias por tu compra !')
+    if(sugerForm == ""){
+        alert('Se te ha olvidado colocar la sugerencia');
+        return false;
+    };
 
-// Metodo
+    var contenido = '<p> Tu nombre es: <strong>' + nombre + '</strong></p>';
+    contenido += '<p> Tu email es: <strong>' + email + '</strong></p>';
+    contenido += '<p> Sugerencia: <strong>' + sugerForm + '</strong></p>';
 
-class Vaso {
-    constructor (nombre, precio){
-        this.nombre = nombre.toUpperCase();
-        this.precio = precio;
-    }
-
-    iva() {
-        this.precio = this.precio * 1.21;
-    }
+    document.getElementById('resultado').innerHTML = contenido;
 };
-
-const venta1 = new Vaso(prompt('Que nombre quieres en el vaso?'), 2 );
-console.log(venta1);
-
-venta1.iva();
-console.log(venta1);
 
 
