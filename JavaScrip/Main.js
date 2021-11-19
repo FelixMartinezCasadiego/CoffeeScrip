@@ -1,37 +1,44 @@
-// Creación de objeto
-
-function Cliente1(var1, var2){ 
-    
-
-    this.cliente = var1;
-    this.bienvenida = var2;
-
-}; 
-
-const Persona1 = new Cliente1(prompt('Ingrese su Nombre: '), alert('Welcome to CoffeeScrip!') );
-
-console.log(Persona1);
-
-var cantidadCafe = prompt('cuantos cafes quieres? ')
-alert('Estará en 2min ! Gracias por tu compra !')
-
-// Metodo
-
-class Vaso {
-    constructor (nombre, precio){
-        this.nombre = nombre.toUpperCase();
+// Class modeladora de objetos
+/*
+class Venta{
+    constructor (id, nombre, precio){
+        this.id = id;
+        this.nombre = nombre;
         this.precio = precio;
     }
+}
 
-    iva() {
-        this.precio = this.precio * 1.21;
-    }
-};
+// Objetos - Productos a ofrecer
 
-const venta1 = new Vaso(prompt('Que nombre quieres en el vaso?'), 2 );
-console.log(venta1);
+const producto0 = new Venta (0, 'capuchino', 3);
+const producto1 = new Venta (1, 'Latte Coffee', 2);
+const producto2 = new Venta (2, 'Milk Coffee', 1);
 
-venta1.iva();
-console.log(venta1);
+let arrayProductos = [producto0, producto1, producto2];
+*/
 
+// Zona del carrito
 
+const addShoppingCarrito = document.querySelectorAll('.AddCarrito');
+
+addShoppingCarrito.forEach( (addToCarButton) => {
+    addToCarButton.addEventListener('click', addToCarClicked);
+});
+
+const shoppingCarItemsContainer = document.querySelector('.shoppingCarItemsContainer');
+
+function addToCarClicked(event) {
+    const button = event.target;
+    const item = button.closest('.item');
+
+    const itemTitle = item.querySelector('.item-Title').textContent;
+    const itemPrice = item.querySelector('.item-Price').textContent;
+    const itemImg = item.querySelector('.item-Img').src;
+
+    addItemToShoppingCar(itemTitle, itemPrice, itemImg);
+}
+
+function addItemToShoppingCar(itemTitle, itemPrice, itemImg){
+    const shoppingCarRow = document.createElement('div');
+    const shoppingCartContent = 
+}
