@@ -25,6 +25,10 @@ addShoppingCarrito.forEach( (addToCarButton) => {
     addToCarButton.addEventListener('click', addToCarClicked);
 });
 
+
+const comprarButton = document.querySelector('.comprarButton');
+comprarButton.addEventListener('click', comprarButtonClicked);
+
 const shoppingCartItemsContainer = document.querySelector('.shoppingCartItemsContainer');
 
 function addToCarClicked(event) {
@@ -40,16 +44,15 @@ function addToCarClicked(event) {
 
 function addItemToShoppingCart(itemTitle, itemPrice, itemImg){
 
+    // PROBLEMA (DUPLICADO)
     const elementsTitle = shoppingCartItemsContainer.getElementsByClassName('.shoppingCartItemTittle');
 
     for(let i = 0; i < elementsTitle.length; i++){
         if (elementsTitle[i].innerText === itemTitle){
-            let elementQuantity = elementsTitle[i].parentElement.parentElement.parentElement.
-            querySelector('.shoppingCartItemQuantity');
-            elementQuantity.value++;
-            $('.toast').toast('show');
-            return;
-        }
+            const elementQuantity = elementsTitle[i].parentElement.parentElement.parentElement.querySelector('.shoppingCartItemQuantity');
+        };
+        elementQuantity.value++;
+        return;
     };
 
     const shoppingCartRow = document.createElement('div');
@@ -57,21 +60,21 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImg){
     <div class="row shoppingCartItem">
 
         <div class="col-6">
-            <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                <img src=${itemImg} class="shopping-cart-image" width="100px">
-                <h6 class="shopping-cart-item-tittle shoppingCartItemTittle text-truncate ml-3 mb-0 ms-3">${itemTitle}</h6>
+            <div class=" d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+                <img src=${itemImg} width="100px">
+                <h6 class="shoppingCartItemTittle text-truncate ml-3 mb-0 ms-3">${itemTitle}</h6>
             </div>
         </div>
 
         <div class="col-2">
-            <div class="shopping-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+            <div class="d-flex align-items-center h-100 border-bottom pb-2 pt-3">
                 <p class="item-price mb-0 shoppingCartItemPrice">${itemPrice}</p>
             </div>
         </div>
 
         <div class="col-4">
-            <div class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
-                <input type="number" class="shopping-cart-quantity-input shoppingCartItemQuantity" value="1">
+            <div class=" d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
+                <input type="number" class="shoppingCartItemQuantity" value="1">
                 <button class="btn btn-danger buttonDelete" type="button">X</button>
             </div>
         </div>
@@ -122,5 +125,10 @@ function quantityChanged(event) {
     if (input.value <= 0){
         input.value = 1;
     };
+    updateShoppingCartTotal();
+};
+
+function comprarButtonClicked() {
+    shoppingCartItemsContainer.innerHTML = '';
     updateShoppingCartTotal();
 };
