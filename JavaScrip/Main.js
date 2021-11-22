@@ -1,22 +1,3 @@
-// Class modeladora de objetos
-/*
-class Venta{
-    constructor (id, nombre, precio){
-        this.id = id;
-        this.nombre = nombre;
-        this.precio = precio;
-    }
-}
-
-// Objetos - Productos a ofrecer
-
-const producto0 = new Venta (0, 'capuchino', 3);
-const producto1 = new Venta (1, 'Latte Coffee', 2);
-const producto2 = new Venta (2, 'Milk Coffee', 1);
-
-let arrayProductos = [producto0, producto1, producto2];
-*/
-
 // Zona del carrito
 
 const addShoppingCarrito = document.querySelectorAll('.AddCarrito');
@@ -44,15 +25,16 @@ function addToCarClicked(event) {
 
 function addItemToShoppingCart(itemTitle, itemPrice, itemImg){
 
-    // PROBLEMA (DUPLICADO)
-    const elementsTitle = shoppingCartItemsContainer.getElementsByClassName('.shoppingCartItemTittle');
+    // (DUPLICADO)
+    const elementsTitle = shoppingCartItemsContainer.getElementsByClassName('shoppingCartItemTittle');
 
     for(let i = 0; i < elementsTitle.length; i++){
         if (elementsTitle[i].innerText === itemTitle){
-            const elementQuantity = elementsTitle[i].parentElement.parentElement.parentElement.querySelector('.shoppingCartItemQuantity');
-        };
-        elementQuantity.value++;
-        return;
+            let elementQuantity = elementsTitle[i].parentElement.parentElement.parentElement.querySelector('.shoppingCartItemQuantity');
+            elementQuantity.value++;
+            updateShoppingCartTotal();
+            return;
+        }; 
     };
 
     const shoppingCartRow = document.createElement('div');
@@ -74,7 +56,7 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImg){
 
         <div class="col-4">
             <div class=" d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
-                <input type="number" class="shoppingCartItemQuantity" value="1">
+                <input class="shoppingCartItemQuantity" type="number" value="1">
                 <button class="btn btn-danger buttonDelete" type="button">X</button>
             </div>
         </div>
@@ -131,4 +113,5 @@ function quantityChanged(event) {
 function comprarButtonClicked() {
     shoppingCartItemsContainer.innerHTML = '';
     updateShoppingCartTotal();
+    alert('Gracias por tu compra');
 };
