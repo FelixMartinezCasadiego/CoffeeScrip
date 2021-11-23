@@ -114,4 +114,5 @@ function comprarButtonClicked() {
     shoppingCartItemsContainer.innerHTML = '';
     updateShoppingCartTotal();
     alert('Gracias por tu compra');
+    location.assign('../index.html');
 };
