@@ -170,7 +170,7 @@ function validarForm() {
         let mensajeConsiForm = '<p class="bg-warning text-black fw-bold">Por favor ingrese información para su pedido.. como: usar leche deslactosada, colocar número de mesa, entre otros </p>';
         textoConsi.html(mensajeConsiForm);
     } else {
-        textoNombre.html('');
+        textoConsi.html('');
     }
 
 };
