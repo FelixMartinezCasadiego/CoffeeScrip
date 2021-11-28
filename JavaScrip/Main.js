@@ -113,6 +113,73 @@ function quantityChanged(event) {
 function comprarButtonClicked() {
     shoppingCartItemsContainer.innerHTML = '';
     updateShoppingCartTotal();
-    alert('Gracias por tu compra');
+    alert('Gracias por su compra');
     location.assign('../index.html');
 };
+
+// Formulario
+
+    // Parte de pagos
+
+var pagoForm = ['Efectivo', 'Tarjeta de débito', 'Tarjeta de crédito'];
+
+function cargaPagos(pagoForm) {
+    var selectPagoForm = $('#Pago-Form');
+
+    for (let pagosForm of pagoForm){
+        selectPagoForm.append("<option value='"+ pagosForm +"'>" + pagosForm + "</option>");
+    }
+};
+
+cargaPagos (pagoForm);
+
+    // Parte de servicios
+
+var servicioForm = ['Llevar a la mesa', 'Retirar en caja'];
+
+function cargaServicios(servicioForm){
+    var selectServicios = $('#Serv-Form');
+
+    for (let serviciosForm of servicioForm){
+        selectServicios.append("<option value='"+ serviciosForm+"'>" + serviciosForm + "</option>");
+    } 
+};
+
+cargaServicios(servicioForm);
+
+    // Validación nombre
+
+function validarForm() {
+
+        // Validación "Nombre"
+    var nombreForm = $('#Nombre-Form').val();
+    var textoNombre = $('#Texto-Form');
+
+    if (nombreForm == ''){
+        let mensajeNombreForm = '<p class="bg-warning text-black fw-bold">Por favor ingrese su nombre</p>';
+        textoNombre.html(mensajeNombreForm);
+    } else {
+        textoNombre.html('');
+    }
+
+        // Validación "Consideraciones adicionales"
+    var ConsiForm = $('#Consi-Form').val();
+    var textoConsi = $('#TextConsi-Form');
+
+    if (ConsiForm == ''){
+        let mensajeConsiForm = '<p class="bg-warning text-black fw-bold">Por favor ingrese información para su pedido.. como: usar leche deslactosada, colocar número de mesa, entre otros </p>';
+        textoConsi.html(mensajeConsiForm);
+    } else {
+        textoNombre.html('');
+    }
+
+};
+
+$('#verif-Nombre').click(function(){
+    validarForm();
+});
+
+
+
+
+
