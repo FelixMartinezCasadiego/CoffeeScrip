@@ -121,7 +121,7 @@ function comprarButtonClicked() {
 
     // Parte de pagos
 
-var pagoForm = ['Efectivo', 'Tarjeta de débito', 'Tarjeta de crédito'];
+var pagoForm = ['Cash', 'Debit card', 'Credit card'];
 
 function cargaPagos(pagoForm) {
     var selectPagoForm = $('#Pago-Form');
@@ -135,7 +135,7 @@ cargaPagos (pagoForm);
 
     // Parte de servicios
 
-var servicioForm = ['Llevar a la mesa', 'Retirar en caja'];
+var servicioForm = ['Bring to the table', 'Take away'];
 
 function cargaServicios(servicioForm){
     var selectServicios = $('#Serv-Form');
@@ -152,30 +152,39 @@ cargaServicios(servicioForm);
 function validarForm() {
 
         // Validación "Nombre"
-    var nombreForm = $('#Nombre-Form').val();
+    var nombreForm = $('#Nombre-Form');
     var textoNombre = $('#Texto-Form');
 
-    if (nombreForm == ''){
-        let mensajeNombreForm = '<p class="bg-warning text-black fw-bold">Por favor ingrese su nombre</p>';
+    if (nombreForm.val() == ''){
+        let mensajeNombreForm = '<p class="bg-warning text-black fw-bold">Please write your name</p>';
         textoNombre.html(mensajeNombreForm);
+        nombreForm.focus();
+        return false;
     } else {
         textoNombre.html('');
-    }
+    }    
+
 
         // Validación "Consideraciones adicionales"
-    var ConsiForm = $('#Consi-Form').val();
+    var ConsiForm = $('#Consi-Form');
     var textoConsi = $('#TextConsi-Form');
 
-    if (ConsiForm == ''){
-        let mensajeConsiForm = '<p class="bg-warning text-black fw-bold">Por favor ingrese información para su pedido.. como: usar leche deslactosada, colocar número de mesa, entre otros </p>';
+    if (ConsiForm.val() == ''){
+        let mensajeConsiForm = '<p class="bg-warning text-black fw-bold">Please enter information for your order .. such as: use lactose-free milk, place table number, others</p>';
         textoConsi.html(mensajeConsiForm);
+        ConsiForm.focus();
+        return false;
     } else {
         textoConsi.html('');
     }
-
 };
 
+
 $('#verif-Nombre').click(function(){
+    validarForm();
+});
+
+$('#Nombre-Form').focusout(function(){
     validarForm();
 });
 
