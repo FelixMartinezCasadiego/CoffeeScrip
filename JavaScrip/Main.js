@@ -44,13 +44,13 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImg){
         <div class="col-6">
             <div class=" d-flex align-items-center h-100 border-bottom pb-2 pt-3">
                 <img src=${itemImg} width="100px">
-                <h6 class="shoppingCartItemTittle text-truncate ml-3 mb-0 ms-3">${itemTitle}</h6>
+                <h6 class="shoppingCartItemTittle text-truncate ml-3 mb-0 ms-3 text-white fs-4">${itemTitle}</h6>
             </div>
         </div>
 
         <div class="col-2">
             <div class="d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                <p class="item-price mb-0 shoppingCartItemPrice">${itemPrice}</p>
+                <p class="item-price mb-0 shoppingCartItemPrice text-white fs-4">${itemPrice}</p>
             </div>
         </div>
 
@@ -113,7 +113,7 @@ function quantityChanged(event) {
 function comprarButtonClicked() {
     shoppingCartItemsContainer.innerHTML = '';
     updateShoppingCartTotal();
-    alert('Gracias por su compra');
+    alert('Thanks! Enjoy your order!');
     location.assign('../index.html');
 };
 
@@ -147,7 +147,7 @@ function cargaServicios(servicioForm){
 
 cargaServicios(servicioForm);
 
-    // Validación nombre
+    // Validación formulario
 
 function validarForm() {
 
@@ -180,13 +180,40 @@ function validarForm() {
 };
 
 
+function mostrarCafe() {
+    $('#Mostrar-cafe').fadeIn(3000);
+};
+
+function mostrarCafe3() {
+    $('#Mostrar-cafe2').fadeIn(3000);
+};
+
+function mostrarCafe2() {
+    $('#Mostrar-cafe3').fadeIn(3000);
+};
+
+function ocultarForm() {
+    $('#Ocultar-Form').fadeOut(3000);
+};
+
+
+
 $('#verif-Nombre').click(function(){
     validarForm();
+    ocultarForm();
+    mostrarCafe();
+    mostrarCafe2();
+    mostrarCafe3();
 });
 
 $('#Nombre-Form').focusout(function(){
     validarForm();
 });
+
+
+
+
+
 
 
 

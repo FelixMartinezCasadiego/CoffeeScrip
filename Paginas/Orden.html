@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="../Css/Mochila.css">
 
 </head>
-<body class="Background_Index">
+<body class="DivBack">
     
     <!-- Zona del navegador -->
 
@@ -37,65 +37,45 @@
     <!-- Formulario de datos del cliente -->
 
     
-        <form class="container DivForm">
-            <div class="row-3">
+    <form class="container DivForm" id="Ocultar-Form">
+        <div class="row-3">
 
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label text-white FormFont name-Custon">Name</label>
-                    <input type="text" class="form-control" id="Nombre-Form" placeholder="Ingrese su nombre">
-                    <div id="Texto-Form" class="form-text"></div>
-                </div>
-    
-                <label class="text-white mb-1 FormFont">Service preference</label>
-                <select class="form-select mb-3 mt-1" aria-label="Default select example" id="Serv-Form">
-                </select>
-
-                <label class="text-white mb-1 FormFont">Payment</label>
-                <select name="Pago" id="Pago-Form" class="form-select mb-3" aria-label="Tipo de pago del pedido">
-                </select>
-
-                
-
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label text-white FormFont">Additional considerations</label>
-                    <textarea class="form-control" id="Consi-Form" rows="3" placeholder="Example: no added sugar, use lactose-free milk, place table number, others."></textarea>
-                    <div id="TextConsi-Form" class="form-text"></div>
-                </div>
-
-                <button class="btn btn-success ml-auto mb-3" id="verif-Nombre" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"> Validate Data </button>
-
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label FormFont name-Custon">Name</label>
+                <input type="text" class="form-control" id="Nombre-Form" placeholder="Please write your name">
+                <div id="Texto-Form" class="form-text"></div>
             </div>
-        </form>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                Thanks for the information! Now you can choose yours drinks!
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
+            <label class="mb-1 FormFont">Service preference</label>
+            <select class="form-select mb-3 mt-1" aria-label="Default select example" id="Serv-Form">
+            </select>
+
+            <label class="mb-1 FormFont">Payment</label>
+            <select name="Pago" id="Pago-Form" class="form-select mb-3" aria-label="Tipo de pago del pedido">
+            </select>
+
+
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label FormFont">Additional considerations</label>
+                <textarea class="form-control" id="Consi-Form" rows="3" placeholder="Example: no added sugar, use lactose-free milk, place table number, others."></textarea>
+                <div id="TextConsi-Form" class="form-text"></div>
             </div>
+
+            <button class="btn btn-success ml-auto mb-3" id="verif-Nombre" type="button"> Validate Data </button>
+
         </div>
-    </div>
-
-
+    </form>
+    
 
     <!-- Titulo para selección del pedido -->
-    <h1 class="text-center H1Form text-white mt-5"> Drinks Selection </h1>
+    <h1 class="text-center H1Form bg-white bg-opacity-25" id="Mostrar-cafe2" style="display: none;"> Drinks Selection </h1>
     <hr>
         
     
 
     <!-- Zona central selección de cafes -->
 
-    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 g-4 mt-5 mx-5 shoppingCarItemsContainer">
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 g-4 mt-5 mx-5 shoppingCarItemsContainer" id="Mostrar-cafe" style="display: none;">
 
         <div class="col item">
             <div class="card h-100" style="width: 400px;">
@@ -142,30 +122,30 @@
 
     <!-- Sección del carrito -->
 
-    <div class="shopping-cart mt-5 text-white">
+    <div class="shopping-cart mt-5" id="Mostrar-cafe3" style="display: none;">
 
         <div class="container">
 
-            <h1 class="text-center H1Form"> Customer Order </h1>
+            <h1 class="text-center H1Form bg-white bg-opacity-25"> Customer Order </h1>
             <hr>
 
-            <div class="row">
+            <div class="row bg-dark bg-opacity-10">
 
                 <div class="col-6">
                     <div class="shopping-cart-header">
-                        <h6>Order</h6>
+                        <h6 class="fs-2 text-white">Order</h6>
                     </div>
                 </div>
 
                 <div class="col-2">
                     <div class="shopping-cart-header">
-                        <h6 class="text-truncate"> Price </h6>
+                        <h6 class="text-truncate text-white fs-2"> Price </h6>
                     </div>
                 </div>
 
                 <div class="col-4">
                     <div class="shopping-cart-header">
-                        <h6>Quantity</h6>
+                        <h6 class="fs-2 text-white">Quantity</h6>
                     </div>
                 </div>
             </div>
@@ -184,8 +164,8 @@
                 <div class="col-12">
                     <div class="shopping-cart-total d-flex align-items-center mb-5">
 
-                        <p class="mb-0">Total</p>
-                        <p class="ml-4 mb-0 shoppingCartTotal mx-5"> $ 0.00 </p>
+                        <p class="mb-0 fs-3 text-white">Total</p>
+                        <p class="ml-4 mb-0 shoppingCartTotal mx-5 fs-3 text-white"> $ 0.00 </p>
 
                         <button class="btn btn-success ml-auto comprarButton ms-auto mt-3 btn-lg" type="button"> Buy </button>
 
