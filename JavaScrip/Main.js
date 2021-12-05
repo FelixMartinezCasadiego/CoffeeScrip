@@ -179,32 +179,52 @@ function validarForm() {
     }
 };
 
-
+// Zona de animación
 function mostrarCafe() {
-    $('#Mostrar-cafe').fadeIn(3000);
+    $('#Mostrar-cafe').fadeIn(1000);
 };
 
 function mostrarCafe3() {
-    $('#Mostrar-cafe2').fadeIn(3000);
+    $('#Mostrar-cafe2').fadeIn(1000);
 };
 
 function mostrarCafe2() {
-    $('#Mostrar-cafe3').fadeIn(3000);
+    $('#Mostrar-cafe3').fadeIn(1000);
 };
 
 function ocultarForm() {
-    $('#Ocultar-Form').fadeOut(3000);
+    $('#Ocultar-Form').fadeOut(1000);
 };
 
+// Validación de datos del form
 
+    //Aplicando API
 
+$('#verif-Nombre').click(()=>{
+    $.ajax({
+        method: 'POST',
+        url: 'https://jsonplaceholder.typicode.com/posts',
+        success: ()=>{
+            alert('Correctly loaded the information');
+            validarForm();
+            ocultarForm();
+            mostrarCafe();
+            mostrarCafe2();
+            mostrarCafe3();
+        },
+        error: ()=>{
+            alert('Error! Could not load');
+        } 
+    });
+})
+/*
 $('#verif-Nombre').click(function(){
     validarForm();
     ocultarForm();
     mostrarCafe();
     mostrarCafe2();
     mostrarCafe3();
-});
+});*/
 
 $('#Nombre-Form').focusout(function(){
     validarForm();
