@@ -1,6 +1,6 @@
 # CoffeeScript
 
-This repository is my CoderHouse academy final project for the course JavaScript. It is a web page that briefly explains some forms of skateboarding.
+This repository is my CoderHouse academy final project for the course JavaScript.
 
 ## Description
 
@@ -15,10 +15,10 @@ I used for the creation of this website: Javascript, JQuery, HTML, CSS, SASS, Bo
 ![](Imagenes/PORTADA2.png)
 
 ### Drinks selection
-![](Images/PORTADA3.png)
+![](Imagenes/PORTADA3.png)
 
 ### Customer Order
-![](Images/PORTADA4.png)
+![](Imagenes/PORTADA4.png)
 
 ## Project visualization
 
