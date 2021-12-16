@@ -9,17 +9,17 @@ I used for the creation of this website: Javascript, JQuery, HTML, CSS, SASS, Bo
 ## Screenshots
 
 ### Home
-![](imagenes/PORTADA1.png)
+![](Imagenes/PORTADA1.png)
 
 ### Customer Information
-![](imagenes/PORTADA2.png)
+![](Imagenes/PORTADA2.png)
 
 ### Drinks selection
-![](images/PORTADA3.png)
+![](Images/PORTADA3.png)
 
 ### Customer Order
-![](images/PORTADA4.png)
+![](Images/PORTADA4.png)
 
 ## Project visualization
 
-Use this link to enter and view the complete project
+Use this link to enter and view the complete project https://felixmartinezcasadiego.github.io/CoffeeScrip/index.html
