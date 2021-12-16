@@ -184,11 +184,11 @@ function mostrarCafe() {
     $('#Mostrar-cafe').fadeIn(1000);
 };
 
-function mostrarCafe3() {
+function mostrarCafe2() {
     $('#Mostrar-cafe2').fadeIn(1000);
 };
 
-function mostrarCafe2() {
+function mostrarCafe3() {
     $('#Mostrar-cafe3').fadeIn(1000);
 };
 
@@ -205,7 +205,6 @@ $('#verif-Nombre').click(()=>{
         method: 'POST',
         url: 'https://jsonplaceholder.typicode.com/posts',
         success: ()=>{
-            alert('Correctly loaded the information');
             validarForm();
             ocultarForm();
             mostrarCafe();
@@ -217,14 +216,6 @@ $('#verif-Nombre').click(()=>{
         } 
     });
 })
-/*
-$('#verif-Nombre').click(function(){
-    validarForm();
-    ocultarForm();
-    mostrarCafe();
-    mostrarCafe2();
-    mostrarCafe3();
-});*/
 
 $('#Nombre-Form').focusout(function(){
     validarForm();
